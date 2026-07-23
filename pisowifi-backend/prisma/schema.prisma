@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Voucher {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  pesos     Int
+  minutes   Int
+  status    String   @default("active") // active | used | expired
+  createdAt DateTime @default(now())
+}
+
+model Device {
+  id       String   @id @default(cuid())
+  name     String   @unique
+  lastSeen DateTime @default(now())
+}
