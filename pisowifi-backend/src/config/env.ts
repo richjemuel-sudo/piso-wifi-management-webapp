@@ -10,6 +10,8 @@ const schema = z.object({
   HOTSPOT_PROFILE: z.string().default("plan-1hr"),
   MINUTES_PER_PESO: z.coerce.number().default(5),
   DATABASE_URL: z.string(),
+  JWT_SECRET: z.string().min(32),
+  JWT_EXPIRES_IN: z.string().default("12h"),
 });
 
 const parsed = schema.safeParse(process.env);

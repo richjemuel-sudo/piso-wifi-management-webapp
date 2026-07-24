@@ -21,3 +21,14 @@ model Device {
   name     String   @unique
   lastSeen DateTime @default(now())
 }
+
+// Add this model to your existing prisma/schema.prisma
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // bcrypt hash — never the plain password
+  name      String
+  role      String   @default("admin") // admin | operator
+  createdAt DateTime @default(now())
+}
