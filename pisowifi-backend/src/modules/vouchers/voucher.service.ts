@@ -3,6 +3,21 @@ import { env } from "../../config/env";
 import { createHotspotUser } from "../../lib/mikrotik";
 import { minutesToUptime } from "../../utils/time";
 import type { IssueVoucherInput } from "./voucher.schema";
+import { clearDevSession } from "../../lib/mikrotik";
+
+import { removeUser } from "../../lib/mikrotik";
+ 
+export async function deleteVoucher(id: string) {
+  const voucher = await prisma.voucher.findUnique({ where: { id } });
+  if (!voucher) return false;
+ 
+  // Remove from MikroTik first (no-op in dev via the stub), then the DB.
+  await removeUser(voucher.code);
+  if (voucher.mac) clearDevSession(voucher.mac);   // NEW
+  await prisma.voucher.delete({ where: { id } });
+  return true;
+}
+ 
 
 /** Create the MikroTik hotspot user, then persist the voucher for the dashboard. */
 export async function issueVoucher({ code, pesos }: IssueVoucherInput) {

@@ -12,6 +12,7 @@ model Voucher {
   code      String   @unique
   pesos     Int
   minutes   Int
+  mac       String?  
   status    String   @default("active") // active | used | expired
   createdAt DateTime @default(now())
 }
@@ -32,3 +33,21 @@ model User {
   role      String   @default("admin") // admin | operator
   createdAt DateTime @default(now())
 }
+
+// Add these to prisma/schema.prisma, then:
+//   npx prisma migrate dev --name portal_sessions
+
+model PausedSession {
+  mac      String   @id
+  code     String
+  pausedAt DateTime
+}
+
+model Setting {
+  key   String @id
+  value String
+}
+
+// And add `mac` to your existing Voucher model:
+//   mac String?
+
