@@ -1,12 +1,18 @@
 import { BarChart3, Coins, Ticket } from "lucide-react";
 import StatCard from "../components/StatCard";
 import DailySalesChart from "../components/DailySalesChart";
-import { mockSales, peso } from "../data/mockData";
+import { api } from "../api/client";
+import { useApi } from "../hooks/useApi";
+
+const peso = (n: number) =>
+  new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", maximumFractionDigits: 0 }).format(n);
 
 export default function Sales() {
-  const total = mockSales.reduce((s, p) => s + p.pesos, 0);
-  const vouchers = mockSales.reduce((s, p) => s + p.vouchers, 0);
-  const avg = Math.round(total / mockSales.length);
+  const { data } = useApi(() => api.sales("weekly"), [], 15_000);
+
+  const total = data?.totalPesos ?? 0;
+  const vouchers = data?.totalVouchers ?? 0;
+  const avg = data ? Math.round(total / 7) : 0;
 
   return (
     <div className="flex flex-col gap-4">

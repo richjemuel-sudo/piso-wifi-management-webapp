@@ -9,12 +9,14 @@ import Sales from "./pages/Sales";
 import Vouchers from "./pages/Vouchers";
 import Network from "./pages/Network";
 import Reset from "./pages/Reset";
+import Portal from "./pages/Portal";
 
 export default function App() {
   return (
     <AuthProvider>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/portal" element={<Portal />} />
 
         {/* Everything below requires a signed-in user */}
         <Route element={<ProtectedRoute />}>

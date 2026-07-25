@@ -42,7 +42,7 @@ export default function Login() {
             <img 
             src="/logo.png" alt="Richly Connected" className="h-25 w-auto rounded-lg bg-navy p-2" 
             />
-          <h1 className="mt-4 text-lg font-size:2px font-semibold">Please Login</h1>
+          <h1 className="mt-4 text-lg font-semibold">Please Login</h1>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3">

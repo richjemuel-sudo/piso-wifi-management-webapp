@@ -1,10 +1,10 @@
-export type Range = "daily" | "weekly" | "monthly";
+/*export type Range = "daily" | "weekly" | "monthly";
 
 export interface SalesPoint {
   label: string;
   pesos: number;
   vouchers: number;
-  /** true for the bucket representing "now" — current hour or today */
+  /** true for the bucket representing "now" — current hour or today 
   isCurrent?: boolean;
 }
 
@@ -25,7 +25,7 @@ function seeded(n: number): number {
   return x - Math.floor(x);
 }
 
-/** Piso wifi traffic is bimodal: a lunch bump and a big evening peak. */
+/** Piso wifi traffic is bimodal: a lunch bump and a big evening peak. 
 function hourWeight(h: number): number {
   if (h < 6) return 0.05;
   if (h < 11) return 0.3;
@@ -78,4 +78,4 @@ export function getSales(range: Range): SalesPoint[] {
 export const peso = (n: number) =>
   new Intl.NumberFormat("en-PH", {
     style: "currency", currency: "PHP", maximumFractionDigits: 0,
-  }).format(n);
+  }).format(n);*/
