@@ -153,6 +153,7 @@ export async function createHotspotUser({
   uptime,
   macAddress,
 }: HotspotUserInput): Promise<void> {
+  if (process.env.NODE_ENV !== "production") return;   // ← add
   return withRouter(async (conn) => {
     const params = [
       `=name=${code}`,

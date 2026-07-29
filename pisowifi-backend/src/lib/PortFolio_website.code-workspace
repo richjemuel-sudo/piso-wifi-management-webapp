@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Documents/PortFolio_website"
+		},
+		{
+			"path": "../../../../../../../xampp/htdocs/eis"
+		},
+		{
+			"path": "../../../../../Documents/WEBSITE"
+		},
+		{
+			"path": "../../../../../Documents/CircuitAcademy"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEBSITE"
+	}
+}
