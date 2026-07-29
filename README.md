@@ -8,6 +8,8 @@ Insert a coin → a voucher is created and the customer is connected → the sal
 
 <!-- GIF/video -->
 <img width="1152" height="648" alt="Image" src="https://github.com/user-attachments/assets/66f65866-572b-4b60-8e4c-d1fee84b93ef" />
+
+<img width="1341" height="633" alt="Image" src="https://github.com/user-attachments/assets/073ed9ae-e7d9-4f2c-bee8-d9e017c79cae" />
 ---
 
 ## What it does
