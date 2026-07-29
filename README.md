@@ -6,9 +6,8 @@ Insert a coin → a voucher is created and the customer is connected → the sal
 
 > **Status:** Working prototype. The hardware coin-reporting path is validated on a real NodeMCU (ESP8266); the RouterOS integration is validated against MikroTik CHR. A browser-based coin simulator is included so the full transaction flow can be demonstrated without physical hardware.
 
-<!-- Replace with your own hosted GIF/video -->
-![Demo](docs/demo.gif)
-
+<!-- GIF/video -->
+<img width="1152" height="648" alt="Image" src="https://github.com/user-attachments/assets/66f65866-572b-4b60-8e4c-d1fee84b93ef" />
 ---
 
 ## What it does
