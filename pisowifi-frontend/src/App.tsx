@@ -10,10 +10,12 @@ import Vouchers from "./pages/Vouchers";
 import Network from "./pages/Network";
 import Reset from "./pages/Reset";
 import Portal from "./pages/Portal";
+import CoinSimulator from "./components/CoinSimulator";   // ← added
 
 export default function App() {
   return (
     <AuthProvider>
+      <CoinSimulator />                                   {/* ← added */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/portal" element={<Portal />} />
